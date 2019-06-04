@@ -1,0 +1,30 @@
+{
+  "name": "carbon_app",
+  "version": "1.0.0",
+  "description": "",
+  "scripts": {
+    "ci": "npm run lint -- ./src && npm run jest",
+    "start": "npm run webpack-dev-server",
+    "build": "NODE_ENV=production npm run webpack",
+    "build:windows": "set NODE_ENV=production&& npm run webpack",
+    "test": "node --inspect=0.0.0.0:9229 ./node_modules/.bin/jest --watchAll",
+    "test:windows": "node --inspect=0.0.0.0:9229 ./node_modules/jest/bin/jest --watchAll",
+    "jest": "./node_modules/.bin/jest",
+    "lint": "./node_modules/.bin/eslint",
+    "webpack": "./node_modules/.bin/webpack",
+    "webpack-dev-server": "./node_modules/.bin/webpack-dev-server"
+  },
+  "author": "",
+  "license": "UNLICENSED",
+  "dependencies": {
+    "carbon-react": "^4.0.0",
+    "flux": "^3.0.0",
+    "react": "^16.0.0",
+    "react-dom": "^16.0.0"
+  },
+  "devDependencies": {
+    "carbon-factory": "^5.0.0",
+    "enzyme": "^3.0.0",
+    "enzyme-adapter-react-16": "^1.0.0"
+  }
+}
