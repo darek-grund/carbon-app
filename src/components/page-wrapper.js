@@ -6,7 +6,7 @@ const PageWrapper = () => {
   return (
     <div>
       <PageHeader />
-      <AppWrapper>Page Content</AppWrapper>
+      <AppWrapper></AppWrapper>
     </div>
   );
 };

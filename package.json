@@ -17,7 +17,7 @@
   "author": "",
   "license": "UNLICENSED",
   "dependencies": {
-    "carbon-react": "^4.0.0",
+    "carbon-react": "^7.3.0",
     "flux": "^3.0.0",
     "react": "^16.0.0",
     "react-dom": "^16.0.0"
