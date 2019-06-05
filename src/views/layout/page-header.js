@@ -7,8 +7,8 @@ const PageHeader = () => {
     <NavigationBar>
       <Menu>
         <MenuItem to='/'>Landing Page</MenuItem>
-        <MenuItem to='first-page'>First Page</MenuItem>
-        <MenuItem to='second-page'>Second Page</MenuItem>
+        <MenuItem to='/first-page'>First Page</MenuItem>
+        <MenuItem to='/second-page'>Second Page</MenuItem>
       </Menu>
     </NavigationBar>
   );

@@ -19,6 +19,8 @@
   "dependencies": {
     "carbon-react": "^7.3.0",
     "flux": "^3.0.0",
+    "i18n-js": "^3.2.2",
+    "prop-types": "^15.7.2",
     "react": "^16.0.0",
     "react-dom": "^16.0.0"
   },
