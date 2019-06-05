@@ -1,5 +1,4 @@
 import React from 'react';
-
 import { Row, Column } from 'carbon-react/lib/components/row';
 
 const SecondPage = () => {
