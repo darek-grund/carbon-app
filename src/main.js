@@ -1,5 +1,5 @@
 import React from 'react';
-import { Route } from 'react-router';
+import { Route, IndexRedirect } from 'react-router';
 import { startRouter } from 'carbon-react/lib/utils/router';
 
 import PageWrapper from './views/layout/page-wrapper';
@@ -19,6 +19,7 @@ startRouter(
   <Route component={ PageWrapper }>
     <Route path='/' component={ LandingPage } />
     <Route path='first-page' component={ FirstPage }>
+      <IndexRedirect to='content2' />
       <Route path='content' component={ Content } />
       <Route path='content1' component={ Content1 } />
       <Route path='content2' component={ Content2 } />
