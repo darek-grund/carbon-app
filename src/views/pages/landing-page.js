@@ -25,6 +25,7 @@ const LandingPage = () => {
           <Fieldset>
             <Textbox
               label='Name'
+              fieldHelp='Name should be 4 - 10 letters long'
               value={ name }
               onChange={ e => setName(e.target.value) }
               validations={ [
@@ -39,6 +40,7 @@ const LandingPage = () => {
               labelWidth={ 20 }
             />
             <DateInput
+              fieldHelp='Date date must be in range of 3 days from today'
               value={ date }
               onChange={ e => setDate(e.target.value) }
               validations={ [
@@ -52,6 +54,7 @@ const LandingPage = () => {
             />
             <Textarea
               label='Text'
+              fieldHelp='Signs like @#$%^&amp;* are not allowed'
               value={ text }
               onChange={ e => setText(e.target.value) }
               validations={ [
