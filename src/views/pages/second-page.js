@@ -5,6 +5,8 @@ import Pod from 'carbon-react/lib/components/pod';
 import PortalCarbon from 'carbon-react/lib/components/portal';
 import TextDecorator from '../../components/text-decorator';
 import Portal from '../../components/portal';
+import ErrorBoundary from '../../components/error-boundary';
+import BrokenComponent from '../../components/broken-component';
 
 const SecondPage = () => {
   return (
@@ -28,6 +30,10 @@ const SecondPage = () => {
         <PortalCarbon>
           <Pod>Portal used by Carbon</Pod>
         </PortalCarbon>
+
+        <ErrorBoundary>
+          <BrokenComponent />
+        </ErrorBoundary>
       </Column>
     </Row>
   );
