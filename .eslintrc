@@ -2,5 +2,9 @@
   "extends": "./node_modules/carbon-factory/.eslintrc",
   "globals": {
     "jest": false
+  },
+  "rules": {
+    "multiline-ternary": "off",
+    "react/prefer-stateless-function": "off"
   }
 }

@@ -1,0 +1,79 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<StyledChip /> should render correctly 1`] = `
+<Styled(Chip)>
+  <StyledComponent
+    forwardedComponent={
+      Object {
+        "$$typeof": Symbol(react.forward_ref),
+        "attrs": Array [],
+        "componentStyle": ComponentStyle {
+          "componentId": "sc-bdVaJa",
+          "isStatic": false,
+          "lastClassName": "iXOmuq",
+          "rules": Array [
+            "
+  display: inline-flex;
+  height: 32px;
+  align-items: center;
+  border: 1px solid #ccc;
+  border-radius: 16px;
+  background: #e0e0e0;
+  font-size: 13px;
+  margin: 4px;
+  padding: ",
+            [Function],
+            ";
+
+  .close {
+    display: flex;
+    width: 20px;
+    height: 20px;
+    background: #aaa;
+    color: #fff;
+    border: none;
+    border-radius: 50%;
+    margin: 0 2px 0 8px;
+    padding: 0;
+    cursor: pointer;
+    align-items: center;
+    justify-content: center;
+    outline: none;
+    transition: .3s;
+
+    &::after {
+      content: '✖';
+      font-size: 10px;
+    }
+
+    &:hover {
+      background-color: #666;
+    }
+  }
+",
+          ],
+        },
+        "displayName": "Styled(Chip)",
+        "foldedComponentIds": Array [],
+        "render": [Function],
+        "styledComponentId": "sc-bdVaJa",
+        "target": [Function],
+        "toString": [Function],
+        "warnTooManyClasses": [Function],
+        "withComponent": [Function],
+        Symbol(Symbol.hasInstance): [Function],
+      }
+    }
+    forwardedRef={null}
+  >
+    <Chip
+      className="sc-bdVaJa iXOmuq"
+      close={false}
+    >
+      <div
+        className="sc-bdVaJa iXOmuq"
+      />
+    </Chip>
+  </StyledComponent>
+</Styled(Chip)>
+`;

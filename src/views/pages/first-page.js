@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 import { Row, Column } from 'carbon-react/lib/components/row';
 import { MenuItem } from 'carbon-react/lib/components/menu';
 import Pod from 'carbon-react/lib/components/pod';
-import Chip from '../../components/chip';
+import { StyledChip as Chip } from '../../components/chip';
 
 const FirstPage = (props) => {
   return (

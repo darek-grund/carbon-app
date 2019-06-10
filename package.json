@@ -29,5 +29,10 @@
     "carbon-factory": "^5.0.0",
     "enzyme": "^3.0.0",
     "enzyme-adapter-react-16": "^1.0.0"
+  },
+  "jest": {
+    "collectCoverageFrom": [
+      "src/**/*.{js,jsx}"
+    ]
   }
 }
