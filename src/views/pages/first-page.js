@@ -3,6 +3,7 @@ import PropTypes from 'prop-types';
 import { Row, Column } from 'carbon-react/lib/components/row';
 import { MenuItem } from 'carbon-react/lib/components/menu';
 import Pod from 'carbon-react/lib/components/pod';
+import Chip from '../../components/chip';
 
 const FirstPage = (props) => {
   return (
@@ -14,6 +15,8 @@ const FirstPage = (props) => {
       </Column>
       <Column>
         <Pod>{props.children}</Pod>
+        <Chip>Chip</Chip>
+        <Chip close>Chip with close icon</Chip>
       </Column>
     </Row>
   );
