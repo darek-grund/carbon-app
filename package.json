@@ -33,6 +33,7 @@
   "jest": {
     "collectCoverageFrom": [
       "src/**/*.{js,jsx}"
-    ]
+    ],
+    "testEnvironment": "node"
   }
 }
