@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import styled from 'styled-components';
 import NavigationBar from 'carbon-react/lib/components/navigation-bar';
 import { Menu, MenuItem } from 'carbon-react/lib/components/menu';
@@ -13,6 +14,14 @@ const PageHeader = ({ className }) => {
       </Menu>
     </NavigationBar>
   );
+};
+
+PageHeader.propTypes = {
+  className: PropTypes.string
+};
+
+PageHeader.defaultPropTypes = {
+  className: ''
 };
 
 const StyledPageHeader = styled(PageHeader)`

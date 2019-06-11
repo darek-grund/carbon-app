@@ -4,6 +4,9 @@ import { createGlobalStyle } from 'styled-components';
 import AppWrapper from 'carbon-react/lib/components/app-wrapper';
 import PageHeader from './page-header';
 
+import { Provider } from 'react-redux';
+import store from '../../store';
+
 const GlobalStyle = createGlobalStyle`
   html,
   body {
@@ -43,8 +46,10 @@ const PageWrapper = (props) => {
   return (
     <div className='page-wrapper'>
       <GlobalStyle />
-      <PageHeader />
-      <AppWrapper>{props.children}</AppWrapper>
+      <Provider store={store}>
+        <PageHeader />
+        <AppWrapper>{props.children}</AppWrapper>
+      </Provider>
     </div>
   );
 };

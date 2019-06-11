@@ -82,7 +82,7 @@
     esutils "^2.0.2"
     js-tokens "^4.0.0"
 
-"@babel/runtime@^7.1.2":
+"@babel/runtime@^7.1.2", "@babel/runtime@^7.4.5":
   version "7.4.5"
   resolved "https://registry.yarnpkg.com/@babel/runtime/-/runtime-7.4.5.tgz#582bb531f5f9dc67d2fcb682979894f75e253f12"
   integrity sha512-TuI4qpWZP6lGOGIuGWtp9sPluqYICmbk8T/1vpSysqJxRPkudh/ofFWyqdcMsDf2s7KvDL4/YHgKyvcS3g9CJQ==
@@ -3707,7 +3707,7 @@ flush-write-stream@^1.0.0:
     inherits "^2.0.3"
     readable-stream "^2.3.6"
 
-flux@^3.0.0:
+flux@^3.1.3:
   version "3.1.3"
   resolved "https://registry.yarnpkg.com/flux/-/flux-3.1.3.tgz#d23bed515a79a22d933ab53ab4ada19d05b2f08a"
   integrity sha1-0jvtUVp5oi2TOrU6tK2hnQWy8Io=
@@ -4159,6 +4159,13 @@ hoist-non-react-statics@^2.1.0, hoist-non-react-statics@^2.3.1:
   resolved "https://registry.yarnpkg.com/hoist-non-react-statics/-/hoist-non-react-statics-2.5.5.tgz#c5903cf409c0dfd908f388e619d86b9c1174cb47"
   integrity sha512-rqcy4pJo55FTTLWt+bU8ukscqHeE/e9KWvsOW2b/a3afxQZhwkQdT1rPPCJ0rYXdj4vNcasY8zHTH+jF/qStxw==
 
+hoist-non-react-statics@^3.3.0:
+  version "3.3.0"
+  resolved "https://registry.yarnpkg.com/hoist-non-react-statics/-/hoist-non-react-statics-3.3.0.tgz#b09178f0122184fb95acf525daaecb4d8f45958b"
+  integrity sha512-0XsbTXxgiaCDYDIWFcwkmerZPSwywfUqYmwT4jzewKTQSWoE6FCMoUVOeBJWK3E/CrWbxRG3m5GzY4lnIwGRBA==
+  dependencies:
+    react-is "^16.7.0"
+
 home-or-tmp@^2.0.0:
   version "2.0.0"
   resolved "https://registry.yarnpkg.com/home-or-tmp/-/home-or-tmp-2.0.0.tgz#e36c3f2d2cae7d746a857e38d18d5f32a7882db8"
@@ -4334,6 +4341,11 @@ ignore@^3.3.3:
   version "3.3.10"
   resolved "https://registry.yarnpkg.com/ignore/-/ignore-3.3.10.tgz#0a97fb876986e8081c631160f8f9f389157f0043"
   integrity sha512-Pgs951kaMm5GXP7MOvxERINe3gsaVjUWFm+UZPSq9xYriQAksyhg0csnS0KXSNRD5NmNdapXEpjxG49+AKh/ug==
+
+immutable@^4.0.0-rc.12:
+  version "4.0.0-rc.12"
+  resolved "https://registry.yarnpkg.com/immutable/-/immutable-4.0.0-rc.12.tgz#ca59a7e4c19ae8d9bf74a97bdf0f6e2f2a5d0217"
+  integrity sha512-0M2XxkZLx/mi3t8NVwIm1g8nHoEmM9p9UBl/G9k4+hm0kBgOVdMV/B3CY5dQ8qG8qc80NN4gDV4HQv6FTJ5q7A==
 
 immutable@~3.8.1:
   version "3.8.2"
@@ -7290,10 +7302,22 @@ react-highcharts@^15.0.0:
   dependencies:
     highcharts "^6.0.0"
 
-react-is@^16.6.0, react-is@^16.8.1, react-is@^16.8.6:
+react-is@^16.6.0, react-is@^16.7.0, react-is@^16.8.1, react-is@^16.8.6:
   version "16.8.6"
   resolved "https://registry.yarnpkg.com/react-is/-/react-is-16.8.6.tgz#5bbc1e2d29141c9fbdfed456343fe2bc430a6a16"
   integrity sha512-aUk3bHfZ2bRSVFFbbeVS4i+lNPZr3/WM5jT2J5omUVV1zzcs1nAaf3l51ctA5FFvCRbhrH0bdAsRRQddFJZPtA==
+
+react-redux@^7.1.0:
+  version "7.1.0"
+  resolved "https://registry.yarnpkg.com/react-redux/-/react-redux-7.1.0.tgz#72af7cf490a74acdc516ea9c1dd80e25af9ea0b2"
+  integrity sha512-hyu/PoFK3vZgdLTg9ozbt7WF3GgX5+Yn3pZm5/96/o4UueXA+zj08aiSC9Mfj2WtD1bvpIb3C5yvskzZySzzaw==
+  dependencies:
+    "@babel/runtime" "^7.4.5"
+    hoist-non-react-statics "^3.3.0"
+    invariant "^2.2.4"
+    loose-envify "^1.4.0"
+    prop-types "^15.7.2"
+    react-is "^16.8.6"
 
 react-router@^3.0.0:
   version "3.2.1"
@@ -7444,6 +7468,14 @@ redux@^3.7.1:
     lodash-es "^4.2.1"
     loose-envify "^1.1.0"
     symbol-observable "^1.0.3"
+
+redux@^4.0.1:
+  version "4.0.1"
+  resolved "https://registry.yarnpkg.com/redux/-/redux-4.0.1.tgz#436cae6cc40fbe4727689d7c8fae44808f1bfef5"
+  integrity sha512-R7bAtSkk7nY6O/OYMVR9RiBI+XghjF9rlbl5806HJbQph0LJVHZrU5oaO4q70eUKiqMRqm4y07KLTlMZ2BlVmg==
+  dependencies:
+    loose-envify "^1.4.0"
+    symbol-observable "^1.2.0"
 
 reflect.ownkeys@^0.2.0:
   version "0.2.0"
@@ -8459,7 +8491,7 @@ symbol-observable@1.0.1:
   resolved "https://registry.yarnpkg.com/symbol-observable/-/symbol-observable-1.0.1.tgz#8340fc4702c3122df5d22288f88283f513d3fdd4"
   integrity sha1-g0D8RwLDEi310iKI+IKD9RPT/dQ=
 
-symbol-observable@^1.0.3:
+symbol-observable@^1.0.3, symbol-observable@^1.2.0:
   version "1.2.0"
   resolved "https://registry.yarnpkg.com/symbol-observable/-/symbol-observable-1.2.0.tgz#c22688aed4eab3cdc2dfeacbb561660560a00804"
   integrity sha512-e900nM8RRtGhlV36KGEU9k65K3mPb1WV70OdjfxlG2EAuM1noi/E/BaW/uMhL7bPEssK8QV57vN3esixjUvcXQ==
