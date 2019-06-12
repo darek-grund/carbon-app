@@ -5,23 +5,31 @@ import Textbox from 'carbon-react/lib/components/textbox';
 import Textarea from 'carbon-react/lib/components/textarea';
 import DateInput from 'carbon-react/lib/components/date';
 import Form from 'carbon-react/lib/components/form';
+import Dropdown from 'carbon-react/lib/components/dropdown';
 import LengthValidator from 'carbon-react/lib/utils/validations/length';
 import PresenceValidator from 'carbon-react/lib/utils/validations/presence';
 import RegexValidator from 'carbon-react/lib/utils/validations/regex';
 import DateValidator from 'carbon-react/lib/utils/validations/date-within-range';
 import DateHelper from 'carbon-react/lib/utils/helpers/date';
+import ImmutableHelper from 'carbon-react/lib/utils/helpers/immutable';
 
 const today = DateHelper.todayFormatted('YYYY-MM-DD');
+const items = ImmutableHelper.parseJSON([
+  { id: 1, name: 'First Item' },
+  { id: 2, name: 'Second Item' },
+  { id: 3, name: 'Third Item' }
+]);
 
 export default class DemoForm extends Component {
   state = {
     name: '',
     date: today,
-    text: ''
+    text: '',
+    item: null
   };
 
   static propTypes = {
-    updateForm: PropTypes.func.isRequired
+    saveForm: PropTypes.func.isRequired
   }
 
   setStateValue = (stateKey, value) => {
@@ -32,10 +40,11 @@ export default class DemoForm extends Component {
 
   handleSubmit = (e) => {
     e.preventDefault();
-    this.props.updateForm({
+    this.props.saveForm({
       name: this.state.name,
       date: this.state.date,
-      text: this.state.text
+      text: this.state.text,
+      item: this.state.item
     });
   }
 
@@ -87,6 +96,14 @@ export default class DemoForm extends Component {
                 customMessage: 'Text should not contain any of the signs: @#$%^&*'
               })
             ] }
+            labelInline
+            labelWidth={ 20 }
+          />
+          <Dropdown
+            label='Items'
+            value={ this.state.item }
+            onChange={ e => this.setStateValue('item', e.target.value) }
+            options={ items }
             labelInline
             labelWidth={ 20 }
           />

@@ -1,17 +1,14 @@
 import { createStore, combineReducers } from 'redux';
 import form from './form';
-
-const mockForm = {
-  name: 'testowanko'
-};
+import header from './header';
 
 const reducer = combineReducers({
-  form
+  form,
+  header
 });
 
 export default createStore(
   reducer,
-  { form: mockForm },
   // eslint-disable-next-line no-underscore-dangle
   window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__(),
 );

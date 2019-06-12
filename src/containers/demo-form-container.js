@@ -5,13 +5,16 @@ import { actions, selectors } from '../store/form';
 
 const mapStateToProps = (state) => {
   return {
-    name: selectors.getName(state)
+    name: selectors.getName(state),
+    date: selectors.getDate(state),
+    text: selectors.getText(state),
+    item: selectors.getItem(state)
   };
 };
 
 const mapDispatchToProps = (dispatch) => {
   return {
-    updateForm: form => dispatch(actions.updateForm(form))
+    saveForm: form => dispatch(actions.saveForm(form))
   };
 };
 

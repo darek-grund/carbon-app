@@ -19,7 +19,7 @@ export default class ErrorBoundary extends Component {
   render() {
     if (this.state.hasError) {
       return (
-        <Pod title='Error Boundary Demo' style={ { marginTop: '40px' } }>
+        <Pod title='Error Boundary Demo' style={ { marginTop: '40px', marginBottom: '40px' } }>
           <details style={ { whiteSpace: 'pre-wrap' } }>
             {this.state.error && this.state.error.toString()}
             {this.state.errorInfo.componentStack}

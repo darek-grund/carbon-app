@@ -7,6 +7,7 @@ import TextDecorator from '../../components/text-decorator';
 import Portal from '../../components/portal';
 import ErrorBoundary from '../../components/error-boundary';
 import BrokenComponent from '../../components/broken-component';
+import HeaderTextEditorContainer from '../../containers/header-text-editor-container';
 
 const SecondPage = () => {
   return (
@@ -34,6 +35,8 @@ const SecondPage = () => {
         <ErrorBoundary>
           <BrokenComponent />
         </ErrorBoundary>
+
+        <HeaderTextEditorContainer />
       </Column>
     </Row>
   );

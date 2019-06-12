@@ -3,21 +3,24 @@ import * as actionTypes from './actionTypes';
 const initialState = {
   name: '',
   date: '',
-  text: ''
+  text: '',
+  item: null
 };
 
-export default function updateForm(state = initialState, action) {
+const saveForm = (state, { form }) => ({
+  ...state,
+  name: form.name,
+  date: form.date,
+  text: form.text,
+  item: form.item
+});
+
+export default (state = initialState, action) => {
   switch (action.type) {
-    case actionTypes.UPDATE_FORM: {
-      return {
-        ...state,
-        name: action.form.name,
-        date: action.form.date,
-        text: action.form.text
-      };
-    }
+    case actionTypes.SAVE_FORM:
+      return saveForm(state, action);
 
     default:
       return state;
   }
-}
+};
