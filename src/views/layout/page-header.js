@@ -14,6 +14,7 @@ const PageHeader = ({ className }) => {
           <MenuItem to='/'>Landing Page</MenuItem>
           <MenuItem to='/first-page'>First Page</MenuItem>
           <MenuItem to='/second-page'>Second Page</MenuItem>
+          <MenuItem to='/transition-page'>Transition Demo Page</MenuItem>
         </Menu>
       </NavigationBar>
     </React.Fragment>

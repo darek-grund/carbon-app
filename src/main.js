@@ -6,6 +6,7 @@ import PageWrapper from './views/layout/page-wrapper';
 import LandingPage from './views/pages/landing-page';
 import FirstPage from './views/pages/first-page';
 import SecondPage from './views/pages/second-page';
+import TransitionPage from './views/pages/transition-page';
 import Content from './views/pages/first-page/content';
 import Content1 from './views/pages/first-page/content1';
 import Content2 from './views/pages/first-page/content2';
@@ -25,6 +26,7 @@ startRouter(
       <Route path='content2' component={ Content2 } />
     </Route>
     <Route path='second-page' component={ SecondPage } />
+    <Route path='transition-page' component={ TransitionPage } />
   </Route>,
 );
 
