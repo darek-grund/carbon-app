@@ -91,7 +91,7 @@ const PageWrapper = ({ location, children }) => {
         <StyledAppWrapper>
           <TransitionGroup>
             <CSSTransition
-              key={ location.pathname } timeout={ 3000 }
+              key={ location.pathname } timeout={ 400 }
               classNames='fade'
             >
               <AppWrapper>{children}</AppWrapper>

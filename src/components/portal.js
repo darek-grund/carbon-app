@@ -1,6 +1,13 @@
-import { Component } from 'react';
+import React, { Component } from 'react';
+import styled from 'styled-components';
 import PropTypes from 'prop-types';
 import ReactDOM from 'react-dom';
+
+const StyledPortal = styled.div`
+  position: absolute;
+  bottom: 0;
+  left: 0;
+`;
 
 export default class Portal extends Component {
   constructor(props) {
@@ -12,11 +19,11 @@ export default class Portal extends Component {
   static propTypes = {
     target: PropTypes.string.isRequired,
     children: PropTypes.element
-  }
+  };
 
   static defaultProps = {
     children: ''
-  }
+  };
 
   componentDidMount() {
     this.destination = document.querySelector(this.props.target);
@@ -29,7 +36,7 @@ export default class Portal extends Component {
 
   render() {
     return ReactDOM.createPortal(
-      this.props.children,
+      <StyledPortal>{this.props.children}</StyledPortal>,
       this.el,
     );
   }

@@ -23,21 +23,6 @@ const transitionStyles = {
   exited: { opacity: 0 }
 };
 
-const Tmp = () => {
-  const [visible, setVisible] = useState(false);
-  return (
-    <div>
-      <button type='button' onClick={ () => setVisible(!visible) }>TOGGLE VISIBILITY</button>
-      <Transition in={ visible } timeout={ 300 }>
-        { state => <span style={ { ...defaultStyle, ...transitionStyles[state] } }>visible</span>}
-      </Transition>
-      <Transition in={ visible } timeout={ 1000 }>
-        { state => <span style={ { ...defaultStyle, ...transitionStyles[state] } }>visible</span>}
-      </Transition>
-    </div>
-  );
-};
-
 const SecondPage = () => {
   return (
     <Row>
@@ -66,8 +51,6 @@ const SecondPage = () => {
         </ErrorBoundary>
 
         <HeaderTextEditorContainer />
-
-        <Tmp />
       </Column>
     </Row>
   );
