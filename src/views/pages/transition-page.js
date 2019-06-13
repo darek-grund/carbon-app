@@ -67,7 +67,7 @@ const CSSTransitionDemo = () => {
         in={ visible } timeout={ 2000 }
         classNames='transition'
       >
-        { state => <StyledCSSTransitionDemo>Lorem ipsum dolor sit amet.</StyledCSSTransitionDemo> }
+        <StyledCSSTransitionDemo>Lorem ipsum dolor sit amet.</StyledCSSTransitionDemo>
       </CSSTransition>
     </React.Fragment>
   );
