@@ -1,5 +1,5 @@
 import { connect } from 'react-redux';
-import HeaderText from '../components/header-text';
+import HeaderText from '../components/HeaderText/HeaderText';
 
 import { selectors } from '../store/header';
 
