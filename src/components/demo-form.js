@@ -29,13 +29,46 @@ export default class DemoForm extends Component {
   };
 
   static propTypes = {
+    name: PropTypes.string,
+    date: PropTypes.string,
+    text: PropTypes.string,
+    item: PropTypes.number,
     saveForm: PropTypes.func.isRequired
   };
 
+  componentDidUpdate(prevProps) {
+    if (this.props.name !== prevProps.name
+      || this.props.date !== prevProps.date
+      || this.props.text !== prevProps.text
+      || this.props.item !== prevProps.item) {
+      // eslint-disable-next-line react/no-did-update-set-state
+      this.setState((prevState, props) => ({
+        ...prevState,
+        name: props.name,
+        date: props.date,
+        text: props.text,
+        item: props.item
+      }));
+    }
+  }
+
+  saveForm(form) {
+    this.props.saveForm({
+      name: form.name,
+      date: form.date,
+      text: form.text,
+      item: form.item
+    });
+  }
+
+  fetchFormData = async () => {
+    const rawForm = await fetch('http://localhost:8081/api/forms/1');
+    const form = await rawForm.json();
+    this.saveForm(form);
+  };
+
   componentDidMount() {
-    fetch('http://localhost:8081/api/forms/1')
-      .then(res => res.json())
-      .then(console.log)
+    this.fetchFormData();
   }
 
   setStateValue = (stateKey, value) => {
@@ -46,12 +79,7 @@ export default class DemoForm extends Component {
 
   handleSubmit = (e) => {
     e.preventDefault();
-    this.props.saveForm({
-      name: this.state.name,
-      date: this.state.date,
-      text: this.state.text,
-      item: this.state.item
-    });
+    this.saveForm(this.state);
   };
 
   render() {
@@ -104,6 +132,7 @@ export default class DemoForm extends Component {
             ] }
             labelInline
             labelWidth={ 20 }
+            rows={ 5 }
           />
           <Dropdown
             label='Items'

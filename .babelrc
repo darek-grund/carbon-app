@@ -1,3 +1,8 @@
 {
-  "extends": "./node_modules/carbon-factory/.babelrc"
+  "extends": "./node_modules/carbon-factory/.babelrc",
+  "plugins": [
+    ["transform-runtime", {
+      "regenerator": true
+    }]
+  ]
 }
