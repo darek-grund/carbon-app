@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import Fieldset from 'carbon-react/lib/components/fieldset';
-import Textbox from 'carbon-react/lib/components/textbox';
+import TextBox from 'carbon-react/lib/components/textbox';
 import Textarea from 'carbon-react/lib/components/textarea';
 import DateInput from 'carbon-react/lib/components/date';
 import Form from 'carbon-react/lib/components/form';
@@ -30,13 +30,19 @@ export default class DemoForm extends Component {
 
   static propTypes = {
     saveForm: PropTypes.func.isRequired
+  };
+
+  componentDidMount() {
+    fetch('http://localhost:8081/api/forms/1')
+      .then(res => res.json())
+      .then(console.log)
   }
 
   setStateValue = (stateKey, value) => {
     this.setState({
       [stateKey]: value
     });
-  }
+  };
 
   handleSubmit = (e) => {
     e.preventDefault();
@@ -46,7 +52,7 @@ export default class DemoForm extends Component {
       text: this.state.text,
       item: this.state.item
     });
-  }
+  };
 
   render() {
     return (
@@ -56,7 +62,7 @@ export default class DemoForm extends Component {
         onSubmit={ this.handleSubmit }
       >
         <Fieldset>
-          <Textbox
+          <TextBox
             label='Name'
             fieldHelp='Name should be 4 - 10 letters long'
             value={ this.state.name }
