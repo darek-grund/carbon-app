@@ -12,6 +12,7 @@ import RegexValidator from 'carbon-react/lib/utils/validations/regex';
 import DateValidator from 'carbon-react/lib/utils/validations/date-within-range';
 import DateHelper from 'carbon-react/lib/utils/helpers/date';
 import ImmutableHelper from 'carbon-react/lib/utils/helpers/immutable';
+import FormService from '../services/form-service/form-service';
 
 const today = DateHelper.todayFormatted('YYYY-MM-DD');
 const items = ImmutableHelper.parseJSON([
@@ -61,14 +62,17 @@ export default class DemoForm extends Component {
     });
   }
 
-  fetchFormData = async () => {
-    const rawForm = await fetch('http://localhost:8081/api/forms/1');
-    const form = await rawForm.json();
-    this.saveForm(form);
-  };
+  fetchFormData({ id }) {
+    new FormService()
+      .get(id, {
+        onSuccess: form => this.saveForm(form),
+        // eslint-disable-next-line no-console
+        onError: error => console.error('Form Service Error', error)
+      });
+  }
 
   componentDidMount() {
-    this.fetchFormData();
+    this.fetchFormData({ id: 1 });
   }
 
   setStateValue = (stateKey, value) => {
