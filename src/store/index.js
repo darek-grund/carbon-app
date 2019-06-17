@@ -1,4 +1,7 @@
-import { createStore, combineReducers } from 'redux';
+import {
+  createStore, combineReducers, compose, applyMiddleware
+} from 'redux';
+import thunk from 'redux-thunk';
 import form from './form';
 import header from './header';
 
@@ -7,8 +10,9 @@ const reducer = combineReducers({
   header
 });
 
+const composeEnhancers = window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose;
+
 export default createStore(
   reducer,
-  // eslint-disable-next-line no-underscore-dangle
-  window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__(),
+  composeEnhancers(applyMiddleware(thunk))
 );

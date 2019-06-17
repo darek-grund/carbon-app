@@ -11,14 +11,16 @@ app.use(cors(corsOptions));
 
 app.get('/api/forms/:id', (request, response) => {
   const { id } = request.params;
-  if (forms[id]) {
-    response
-      .json(forms[id]);
-  } else {
-    response
-      .status(404)
-      .json({ error: 'Form not found' });
-  }
+  setTimeout(() => {
+    if (forms[id]) {
+      response
+        .json(forms[id]);
+    } else {
+      response
+        .status(404)
+        .json({ message: 'Form not found' });
+    }
+  }, 500);
 });
 
 app.listen(8081);

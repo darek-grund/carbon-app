@@ -8,13 +8,16 @@ const mapStateToProps = (state) => {
     name: selectors.getName(state),
     date: selectors.getDate(state),
     text: selectors.getText(state),
-    item: selectors.getItem(state)
+    item: selectors.getItem(state),
+    loading: selectors.getLoading(state),
+    error: selectors.getError(state)
   };
 };
 
 const mapDispatchToProps = (dispatch) => {
   return {
-    saveForm: form => dispatch(actions.saveForm(form))
+    saveForm: form => dispatch(actions.saveForm(form)),
+    fetchForm: () => dispatch(actions.fetchForm())
   };
 };
 

@@ -6,13 +6,14 @@ import Textarea from 'carbon-react/lib/components/textarea';
 import DateInput from 'carbon-react/lib/components/date';
 import Form from 'carbon-react/lib/components/form';
 import Dropdown from 'carbon-react/lib/components/dropdown';
+import Spinner from 'carbon-react/lib/components/spinner';
+import Message from 'carbon-react/lib/components/message';
 import LengthValidator from 'carbon-react/lib/utils/validations/length';
 import PresenceValidator from 'carbon-react/lib/utils/validations/presence';
 import RegexValidator from 'carbon-react/lib/utils/validations/regex';
 import DateValidator from 'carbon-react/lib/utils/validations/date-within-range';
 import DateHelper from 'carbon-react/lib/utils/helpers/date';
 import ImmutableHelper from 'carbon-react/lib/utils/helpers/immutable';
-import FormService from '../services/form-service/form-service';
 
 const today = DateHelper.todayFormatted('YYYY-MM-DD');
 const items = ImmutableHelper.parseJSON([
@@ -26,7 +27,8 @@ export default class DemoForm extends Component {
     name: '',
     date: today,
     text: '',
-    item: null
+    item: null,
+    shouldFetchForm: false
   };
 
   static propTypes = {
@@ -34,21 +36,26 @@ export default class DemoForm extends Component {
     date: PropTypes.string,
     text: PropTypes.string,
     item: PropTypes.number,
-    saveForm: PropTypes.func.isRequired
+    loading: PropTypes.bool,
+    error: PropTypes.string,
+    saveForm: PropTypes.func.isRequired,
+    fetchForm: PropTypes.func.isRequired
   };
 
-  componentDidUpdate(prevProps) {
-    if (this.props.name !== prevProps.name
+  componentDidUpdate(prevProps, prevState) {
+    if (prevState.shouldFetchForm
+      || this.props.name !== prevProps.name
       || this.props.date !== prevProps.date
       || this.props.text !== prevProps.text
       || this.props.item !== prevProps.item) {
-      // eslint-disable-next-line react/no-did-update-set-state
+      // eslint-disable-next-line react/no-did-update-set-state, no-shadow
       this.setState((prevState, props) => ({
         ...prevState,
         name: props.name,
         date: props.date,
         text: props.text,
-        item: props.item
+        item: props.item,
+        shouldFetchForm: false
       }));
     }
   }
@@ -62,17 +69,11 @@ export default class DemoForm extends Component {
     });
   }
 
-  fetchFormData({ id }) {
-    new FormService()
-      .get(id, {
-        onSuccess: form => this.saveForm(form),
-        // eslint-disable-next-line no-console
-        onError: error => console.error('Form Service Error', error)
-      });
-  }
-
   componentDidMount() {
-    this.fetchFormData({ id: 1 });
+    this.props.fetchForm();
+    this.setState({
+      shouldFetchForm: true
+    });
   }
 
   setStateValue = (stateKey, value) => {
@@ -87,6 +88,33 @@ export default class DemoForm extends Component {
   };
 
   render() {
+    const { loading, error } = this.props;
+
+    if (loading) {
+      return (
+        <div style={ {
+          display: 'flex',
+          justifyContent: 'center',
+          alignItems: 'center',
+          minHeight: '300px'
+        } }
+        >
+          <Spinner />
+        </div>
+      );
+    }
+
+    if (error) {
+      return (
+        <Message
+          as='error'
+          title='Error'
+        >
+          {error}
+        </Message>
+      );
+    }
+
     return (
       <Form
         unsavedWarning={ false }
