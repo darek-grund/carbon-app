@@ -2,8 +2,8 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import StyledHeaderText from './HeaderText.style';
 
-const HeaderText = (props) => {
-  return <StyledHeaderText>{props.text}</StyledHeaderText>;
+const HeaderText = ({ text }) => {
+  return <StyledHeaderText>{text}</StyledHeaderText>;
 };
 
 HeaderText.propTypes = {
