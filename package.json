@@ -21,6 +21,7 @@
     "carbon-react": "^7.3.0",
     "i18n-js": "^3.2.2",
     "immutable": "^4.0.0-rc.12",
+    "jest-styled-components": "^6.3.3",
     "prettier": "^1.18.2",
     "prop-types": "^15.7.2",
     "react": "^16.0.0",
@@ -39,7 +40,8 @@
     "enzyme": "^3.0.0",
     "enzyme-adapter-react-16": "^1.0.0",
     "express": "^4.17.1",
-    "nodemon": "^1.19.1"
+    "nodemon": "^1.19.1",
+    "react-test-renderer": "^16.8.6"
   },
   "jest": {
     "collectCoverageFrom": [
