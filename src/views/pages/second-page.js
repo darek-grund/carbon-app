@@ -5,8 +5,8 @@ import Pod from 'carbon-react/lib/components/pod';
 import PortalCarbon from 'carbon-react/lib/components/portal';
 import TextDecorator from '../../components/text-decorator';
 import Portal from '../../components/portal';
-import ErrorBoundary from '../../components/error-boundary';
-import BrokenComponent from '../../components/broken-component';
+import ErrorBoundary from '../../components/ErrorBoundary/ErrorBoundary';
+import BrokenComponent from '../../components/BrokenComponent/BrokenComponent';
 import HeaderTextEditorContainer from '../../containers/header-text-editor-container';
 
 const SecondPage = () => {
