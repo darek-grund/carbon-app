@@ -1,0 +1,14 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<HeaderText /> renders as expected 1`] = `
+.c0 {
+  padding: 30px;
+  text-align: center;
+  font-size: 20px;
+  font-weight: 700;
+}
+
+<div
+  className="c0"
+/>
+`;
