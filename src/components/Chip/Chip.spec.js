@@ -1,6 +1,6 @@
 import React from 'react';
 import { mount } from 'enzyme';
-import { StyledChip } from './chip';
+import { StyledChip } from './Chip';
 
 // Demonstration of a simple test for the HelloWorld component:
 describe('<StyledChip />', () => {
