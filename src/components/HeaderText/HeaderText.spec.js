@@ -6,7 +6,6 @@ import { ThemeProvider } from 'styled-components';
 import HeaderText from './HeaderText';
 import { theme } from '../../context/ThemeContext';
 
-// Demonstration of a simple test for the HelloWorld component:
 describe('<HeaderText />', () => {
   it('renders as expected', () => {
     const wrapper = renderer.create(<HeaderText />);

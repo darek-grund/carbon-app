@@ -4,7 +4,6 @@ import ErrorBoundary from './ErrorBoundary';
 
 const ComponentWithError = () => <div>Error Component</div>;
 
-// Demonstration of a simple test for the HelloWorld component:
 describe('<ErrorBoundary />', () => {
   it('renders as expected', () => {
     const children = <div>children</div>;
