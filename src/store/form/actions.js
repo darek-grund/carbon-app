@@ -17,7 +17,7 @@ export const fetchFormSuccess = form => ({
 
 export const fetchFormError = error => ({
   type: actionTypes.FETCH_FORM_ERROR,
-  error: error.data.message
+  error: (error && error.data && error.data.message) || 'Unknown error'
 });
 
 export const fetchForm = () => (dispatch) => {
