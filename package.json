@@ -41,7 +41,8 @@
     "enzyme-adapter-react-16": "^1.0.0",
     "express": "^4.17.1",
     "nodemon": "^1.19.1",
-    "react-test-renderer": "^16.8.6"
+    "react-test-renderer": "^16.8.6",
+    "xhr-mock": "^2.4.1"
   },
   "jest": {
     "collectCoverageFrom": [

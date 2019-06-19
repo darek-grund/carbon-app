@@ -4,7 +4,7 @@ import forms from './forms';
 
 const app = express();
 const corsOptions = {
-  origin: 'http://127.0.0.1:8080',
+  origin: '*',
   optionsSuccessStatus: 200
 };
 app.use(cors(corsOptions));
