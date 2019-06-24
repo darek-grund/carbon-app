@@ -14,7 +14,8 @@
     "webpack": "./node_modules/.bin/webpack",
     "webpack-dev-server": "./node_modules/.bin/webpack-dev-server",
     "server": "nodemon --exec babel-node server-express/index.js",
-    "cypress:open": "cypress open"
+    "cypress:open": "cypress open",
+    "storybook": "start-storybook"
   },
   "author": "",
   "license": "UNLICENSED",
@@ -34,6 +35,10 @@
     "styled-components": "^4.2.1"
   },
   "devDependencies": {
+    "@storybook/addon-a11y": "^5.1.9",
+    "@storybook/addon-actions": "^5.1.9",
+    "@storybook/addon-knobs": "^5.1.9",
+    "@storybook/react": "^5.1.9",
     "babel-plugin-transform-runtime": "^6.23.0",
     "carbon-factory": "^5.0.0",
     "concurrently": "^4.1.0",

@@ -32,7 +32,8 @@ class Chip extends Component {
               type='button'
               className='close'
               onClick={ onClose }
-            />
+            >close
+            </button>
           )
           : false}
       </div>
@@ -56,7 +57,6 @@ const StyledChip = styled(Chip)`
     width: 20px;
     height: 20px;
     background: #aaa;
-    color: #fff;
     border: none;
     border-radius: 50%;
     margin: 0 2px 0 8px;
@@ -66,8 +66,10 @@ const StyledChip = styled(Chip)`
     justify-content: center;
     outline: none;
     transition: .3s;
+    font-size: 0;
 
     &::after {
+      color: #fff;
       content: '✖';
       font-size: 10px;
     }

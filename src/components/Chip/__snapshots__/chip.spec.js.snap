@@ -1,6 +1,61 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`<StyledChip /> should render correctly 1`] = `
+.c0 {
+  display: -webkit-inline-box;
+  display: -webkit-inline-flex;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  height: 32px;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  border: 1px solid #ccc;
+  border-radius: 16px;
+  background: #e0e0e0;
+  font-size: 13px;
+  margin: 4px;
+  padding: 0 12px;
+}
+
+.c0 .close {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  width: 20px;
+  height: 20px;
+  background: #aaa;
+  border: none;
+  border-radius: 50%;
+  margin: 0 2px 0 8px;
+  padding: 0;
+  cursor: pointer;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  outline: none;
+  -webkit-transition: .3s;
+  transition: .3s;
+  font-size: 0;
+}
+
+.c0 .close::after {
+  color: #fff;
+  content: '✖';
+  font-size: 10px;
+}
+
+.c0 .close:hover {
+  background-color: #666;
+}
+
 <Styled(Chip)>
   <StyledComponent
     forwardedComponent={
@@ -10,7 +65,7 @@ exports[`<StyledChip /> should render correctly 1`] = `
         "componentStyle": ComponentStyle {
           "componentId": "sc-bdVaJa",
           "isStatic": false,
-          "lastClassName": "iXOmuq",
+          "lastClassName": "c0",
           "rules": Array [
             "
   display: inline-flex;
@@ -30,7 +85,6 @@ exports[`<StyledChip /> should render correctly 1`] = `
     width: 20px;
     height: 20px;
     background: #aaa;
-    color: #fff;
     border: none;
     border-radius: 50%;
     margin: 0 2px 0 8px;
@@ -40,8 +94,10 @@ exports[`<StyledChip /> should render correctly 1`] = `
     justify-content: center;
     outline: none;
     transition: .3s;
+    font-size: 0;
 
     &::after {
+      color: #fff;
       content: '✖';
       font-size: 10px;
     }
@@ -67,11 +123,11 @@ exports[`<StyledChip /> should render correctly 1`] = `
     forwardedRef={null}
   >
     <Chip
-      className="sc-bdVaJa iXOmuq"
+      className="c0"
       close={false}
     >
       <div
-        className="sc-bdVaJa iXOmuq"
+        className="c0"
       />
     </Chip>
   </StyledComponent>
