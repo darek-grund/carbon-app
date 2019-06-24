@@ -13,7 +13,8 @@
     "lint": "./node_modules/.bin/eslint",
     "webpack": "./node_modules/.bin/webpack",
     "webpack-dev-server": "./node_modules/.bin/webpack-dev-server",
-    "server": "nodemon --exec babel-node server-express/index.js"
+    "server": "nodemon --exec babel-node server-express/index.js",
+    "cypress:open": "cypress open"
   },
   "author": "",
   "license": "UNLICENSED",
@@ -37,8 +38,10 @@
     "carbon-factory": "^5.0.0",
     "concurrently": "^4.1.0",
     "cors": "^2.8.5",
+    "cypress": "^3.3.1",
     "enzyme": "^3.0.0",
     "enzyme-adapter-react-16": "^1.0.0",
+    "eslint-plugin-cypress": "^2.2.1",
     "express": "^4.17.1",
     "nodemon": "^1.19.1",
     "react-test-renderer": "^16.8.6",

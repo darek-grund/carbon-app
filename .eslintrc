@@ -3,6 +3,12 @@
   "globals": {
     "jest": false
   },
+  "plugins": [
+    "cypress"
+  ],
+  "env": {
+    "cypress/globals": true
+  },
   "rules": {
     "multiline-ternary": "off",
     "react/prefer-stateless-function": "off"
