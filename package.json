@@ -20,7 +20,8 @@
   "author": "",
   "license": "UNLICENSED",
   "dependencies": {
-    "carbon-react": "^7.3.0",
+    "carbon-react": "^4.0.0",
+    "core-js": "1",
     "i18n-js": "^3.2.2",
     "immutable": "^4.0.0-rc.12",
     "jest-styled-components": "^6.3.3",
@@ -38,7 +39,7 @@
     "@storybook/addon-a11y": "^5.1.9",
     "@storybook/addon-actions": "^5.1.9",
     "@storybook/addon-knobs": "^5.1.9",
-    "@storybook/react": "^5.1.9",
+    "@storybook/react": "^5.0.5",
     "babel-plugin-transform-runtime": "^6.23.0",
     "carbon-factory": "^5.0.0",
     "concurrently": "^4.1.0",
