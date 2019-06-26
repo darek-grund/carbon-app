@@ -1,5 +1,6 @@
 import * as actionTypes from './actionTypes';
 import FormService from '../../services/form-service/form-service';
+import axios from 'axios';
 
 export const saveForm = form => ({
   type: actionTypes.SAVE_FORM,
@@ -20,12 +21,10 @@ export const fetchFormError = error => ({
   error: (error && error.data && error.data.message) || 'Unknown error'
 });
 
-export const fetchForm = () => (dispatch) => {
-  dispatch(fetchFormLoading());
+export const fetchForm = () => async (dispatch) => {
+  await dispatch(fetchFormLoading());
 
-  new FormService()
-    .get(1, {
-      onSuccess: form => dispatch(fetchFormSuccess(form)),
-      onError: error => dispatch(fetchFormError(error))
-    });
+  return axios.get('http://127.0.0.1:8081/api/forms/1')
+    .then(response => dispatch(fetchFormSuccess(response.data)))
+    .catch(error => dispatch(fetchFormError(error && error.response)));
 };

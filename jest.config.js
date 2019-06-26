@@ -1,7 +1,6 @@
 module.exports = {
-  preset: "./node_modules/carbon-factory/jest.conf.json",
+  preset: './node_modules/carbon-factory/jest.conf.json',
   testMatch: [
-    '**/__spec__.js',
     '**/src/**/*.spec.js'
   ],
   setupFiles: [
