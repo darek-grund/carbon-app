@@ -36,4 +36,13 @@ describe('reducer', () => {
     };
     expect(reducer(initialState, action)).toMatchObject({ ...form, loading: false, error: '' });
   });
+
+  it('handles FETCH_FORM_ERROR', () => {
+    const action = {
+      type: actionTypes.FETCH_FORM_ERROR,
+      error: 'Some error message'
+    };
+    expect(reducer(initialState, action))
+      .toMatchObject({ ...initialState, loading: false, error: 'Some error message' });
+  });
 });

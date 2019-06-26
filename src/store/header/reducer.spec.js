@@ -7,6 +7,10 @@ describe('reducer', () => {
   });
 
   it('handles SAVE_TEXT', () => {
-    expect(reducer(initialState, actionTypes.SAVE_TEXT)).toEqual(initialState);
+    const action = {
+      type: actionTypes.SAVE_TEXT,
+      text: 'Text to save'
+    };
+    expect(reducer(initialState, action)).toEqual({ text: 'Text to save' });
   });
 });
